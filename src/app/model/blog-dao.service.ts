@@ -27,8 +27,6 @@ export class BlogDaoService {
     value.title = (value.title as string).replace(/\s/g, '_');
     console.log(value.title);
     console.log('dao', value);
-    // this.af.database.list(blogPostPath+'/' +value.title).push(value)
-    //   .then(a=>console.log('The Result is',a)).catch(a=>console.log('catching...',a['database']))
     this.af.database.object(blogPostPath).update({[value.title]: value}).then(a => a).catch(a => console.log('ERRR', a))
   }
 
@@ -37,7 +35,7 @@ export class BlogDaoService {
     return this.af.database.list(blogPostPath);
   }
 
-  _toCatalog(filename, downloadUrl) {
+ private _toCatalog(filename, downloadUrl) {
     return this.af.database.object(blogPostPath + filename).update({[filename]: downloadUrl})
   }
 
@@ -55,15 +53,13 @@ export class BlogDaoService {
       .catch(err => console.log('anerror has occurred', err));
   }
 
-  _fromStore(url: any) {
+  private _fromStore(url: any) {
     this.http.get(url)
       .map((a: Response) => a.json())
       .subscribe(console.log)
   }
 
-  _denaturalize(title: string) {
-    return (title as string).replace(/\s/g, '_');
-  }
+
 
 
   retrieveFromStorage(filename?: string) {
@@ -76,13 +72,12 @@ export class BlogDaoService {
 
 
   findItem(key) {
-    console.log('PPPPPPPPP...is found')   ;
     return this.af.database.object(storePostPath + key).map(a => a[key])
 
   }
 
 
-  _delete(key) {
+  private _delete(key) {
     // this.fba.object
       this.af.database.object(storePostPath +key)  .remove().then(
         result => console.log('result',result),
@@ -121,13 +116,10 @@ export class BlogDaoService {
   }
 
 
-  _delete_catalog_item(key) {
+  private _delete_catalog_item(key) {
     return this.af.database.object(storePostPath +key).remove();
   }
 
-  exists(filename) {
-
-  }
 
 
 }
