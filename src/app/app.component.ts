@@ -9,6 +9,6 @@ import {BlogDaoService} from "./model/blog-dao.service";
 export class AppComponent {
   title = 'app works!';
   constructor(private service:BlogDaoService){
-    this.service.
+    this.service.fromCatalog().subscribe(a=>console.log("From Catalog",a))
   }
 }
