@@ -41,7 +41,6 @@ export class BlogDaoService {
 
   toStorage(value) {
 
-    console.log('to storage XXXXXXX')
     value.title = (value.title as string).replace(/\s/g, '_');
     let blob = new Blob([JSON.stringify(value)]);
 
@@ -88,13 +87,15 @@ export class BlogDaoService {
     return Observable.of(42);
   }
 
+
+
   delete(key): Subject<any> {
 
     var result: Subject<any> = new Subject();
 
     this.findItem(key)
       .subscribe(a => {
-                                                    //  ++++
+
         this.fba.storage().ref().child(storePostPath + key).delete()
           .then((a) => {
           console.log('about to delete...',key)
@@ -108,9 +109,7 @@ export class BlogDaoService {
             this.fba.storage().ref().child('').delete();
           })
 
-
       })
-
 
     return result;
   }
