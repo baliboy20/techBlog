@@ -25,8 +25,8 @@ export class BlogDaoService {
 
   postBog(value) {
     value.title = (value.title as string).replace(/\s/g, '_');
-    console.log(value.title);
-    console.log('dao', value);
+    // console.log(value.title);
+    // console.log('dao', value);
     this.af.database.object(blogPostPath).update({[value.title]: value}).then(a => a).catch(a => console.log('ERRR', a))
   }
 
@@ -54,15 +54,13 @@ export class BlogDaoService {
 
   private _fromStore(url: any) {
     this.http.get(url)
-      .map((a: Response) => a.json())
+      .map((a: Response)=> a.json())
       .subscribe(console.log)
   }
 
 
 
-
   retrieveFromStorage(filename?: string) {
-
 
     return this.fba.storage().ref().child(storePostPath + "my_title").getDownloadURL()
       .then(a => this._fromStore(a))
@@ -77,12 +75,10 @@ export class BlogDaoService {
 
 
   private _delete(key) {
-    // this.fba.object
       this.af.database.object(storePostPath +key)  .remove().then(
         result => console.log('result',result),
         error => console.log('error',error)
       )
-
 
     return Observable.of(42);
   }
@@ -98,7 +94,7 @@ export class BlogDaoService {
 
         this.fba.storage().ref().child(storePostPath + key).delete()
           .then((a) => {
-          console.log('about to delete...',key)
+
             this._delete_catalog_item(key)
               .then(a => result.next( {ok: true, msg: 'delete completed.', result: a}), a => result.next({ ok: false, msg:'Delete of catalog failed.', error:a}) )
           }

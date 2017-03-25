@@ -16,8 +16,9 @@ import {BlogDaoService} from "./model/blog-dao.service";
     FormsModule,
     HttpModule,
     BlogDaoModule
+
   ],
-  providers: [BlogDaoService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
