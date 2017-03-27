@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {BlogDaoModule} from "./model/blog-dao.module";
+import {BlogDaoService} from "./model/blog-dao.service";
 
 @NgModule({
   declarations: [
@@ -12,9 +14,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    BlogDaoModule
+
   ],
-  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

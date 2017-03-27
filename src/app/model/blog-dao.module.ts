@@ -16,9 +16,11 @@ import {HttpModule} from "@angular/http";
   imports: [
     CommonModule,
     HttpModule,
-    AngularFireModule.initializeApp(cfg)
+   AngularFireModule.initializeApp(cfg),
+
   ],
-  declarations: [],
-  exports:[BlogDaoService]
+
+  providers:[BlogDaoService],
+  // exports:[BlogDaoService]
 })
 export class BlogDaoModule { }
