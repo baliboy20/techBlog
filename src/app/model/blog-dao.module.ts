@@ -20,7 +20,7 @@ import {HttpModule} from "@angular/http";
 
   ],
 
-  providers:[BlogDaoService],
+  providers: [BlogDaoService],
   // exports:[BlogDaoService]
 })
 export class BlogDaoModule { }
