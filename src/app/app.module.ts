@@ -4,18 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {BlogDaoModule} from "./model/blog-dao.module";
-import {BlogDaoService} from "./model/blog-dao.service";
+// import {BlogDaoModule} from "./model/blog-dao.module";
+// import {BlogDaoService} from "./model/blog-dao.service";
+import { RecipesComponent } from './recipes/recipes.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const route: Routes = [];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    BlogDaoModule
+    RouterModule.forRoot(route),
 
   ],
 
