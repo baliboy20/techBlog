@@ -89,6 +89,14 @@
     }
 
   }
+
+.active-route:after {
+  box-shadow: -1px 1px 15px -1px dimgray;
+  background: hotpink;
+  width: 100%;
+  transition: background 500ms ease, width 500ms ease;
+
+}
   div.content-area {
 
     padding: 0;

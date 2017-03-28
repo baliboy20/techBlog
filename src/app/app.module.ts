@@ -9,13 +9,15 @@ import {BlogDaoModule} from "./model/blog-dao.module";
 import { RecipesComponent } from './recipes/recipes.component';
 import {RouterModule, Routes} from "@angular/router";
 import {KnowledgebaseModule} from "./knowledgebase/knowledgebase.module";
+import { SearchComponent } from './shared/search/search.component';
 
 const route: Routes = [];
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecipesComponent
+    RecipesComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
