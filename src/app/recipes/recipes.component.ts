@@ -16,8 +16,7 @@ export class RecipesComponent implements OnInit {
   ngOnInit() {
     // console.log(`children: ${this.ar.children} \n\npathfromroot: ${this.ar.pathFromRoot} \n\nurl: ${JSON.stringify(this.ar.url)}`);
     this.ar.url.subscribe(a => console.log("xx", a));
-    // this.router.
-    //this.router.navigate(['./search']);
+
   }
 
 }
