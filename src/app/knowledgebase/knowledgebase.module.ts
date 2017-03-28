@@ -5,11 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {RecipesModule} from "../recipes/recipes.module";
 import {RecipesComponent} from "../recipes/recipes.component";
 
-const routes: Routes = [{ path: 'knowledgebase', component: KnowledgebaseComponent,
-children: [
-  {path: 'recipes', component: RecipesComponent}
-  ]
-}]
+const routes: Routes = [{ path: 'knowledgebase', component: KnowledgebaseComponent }]
 
 @NgModule({
   imports: [
