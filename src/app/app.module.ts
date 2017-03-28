@@ -9,15 +9,14 @@ import {BlogDaoModule} from "./model/blog-dao.module";
 import { RecipesComponent } from './recipes/recipes.component';
 import {RouterModule, Routes} from "@angular/router";
 import {KnowledgebaseModule} from "./knowledgebase/knowledgebase.module";
-import { SearchComponent } from './shared/search/search.component';
+import {SharedModule} from "./shared/shared.module";
 
 const route: Routes = [];
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecipesComponent,
-    SearchComponent
+    RecipesComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +25,7 @@ const route: Routes = [];
     RouterModule.forRoot(route),
     BlogDaoModule,
     KnowledgebaseModule,
+    SharedModule,
 
   ],
 
