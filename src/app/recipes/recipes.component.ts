@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-recipes',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private ar: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    console.log(`children: ${this.ar.children} \n\npathfromroot: ${this.ar.pathFromRoot} \n\nurl: ${JSON.stringify(this.ar.url)}`);
+  this.router.navigate(['./search']);
   }
 
 }
