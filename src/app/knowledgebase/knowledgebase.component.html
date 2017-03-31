@@ -3,7 +3,7 @@
 
 <div class="main-container">
 
-  <div class="left-side">
+  <div class="left-side" *ngIf="showLeftSide">
     <div class="vertical-spacer" style="height: 1.001vh">88</div>mod
 
     <div class="left-side-header">
@@ -25,7 +25,7 @@
       </div>
 
       <ul class="sidebarMenu">
-        <li><a [routerLink]="['recipes']"><span class="material-icons">business_center</span> <span> Recipes</span></a></li>
+        <li><a [routerLink]="['recipes']" (click)="showLeftSide=false"><span class="material-icons">business_center</span> <span> Recipes</span></a></li>
         <li><a href=""><span class="material-icons">airport_shuttle</span></a> <span> Drils</span></li>
         <li><a href=""><span class="material-icons">all_inclusive</span></a> <span> Snippets</span></li>
         <li><a href=""><span class="material-icons">free_breakfast</span></a> <span> Links</span></li>

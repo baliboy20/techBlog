@@ -4,27 +4,19 @@
 <div>Search Component</div>
 
 
+<div style="display: inline-flex; justify-content: center; margin: 0; left: 0; right:0">
+  <span class="material-icons">search</span>
+  <span contentEditable="true" > some text</span>
+</div>
 
-<div>
+<div style="height: 1.5rem"></div>
 
-  <div class="blog-title"> Blog Title</div>
-  <div class="blog-date">23 Aug 1963</div>
-  <div class="blog-date">
+<div *ngFor="let i of list">
 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur aut ducimus eos eum laudantium numquam ratione veniam. At consectetur corporis doloremque ducimus eius ipsum itaque repellat sit veritatis voluptatem?
-    Ea eligendi esse expedita magni similique? Atque dolore doloribus id vero. Deserunt dolorum eius laudantium modi ratione. Aut autem beatae commodi facilis ipsa iure iusto nostrum officia? Delectus quos, voluptate!
-    Debitis dicta dolore ex hic molestiae nulla quaerat ratione reprehenderit similique veritatis. Atque culpa dignissimos mollitia temporibus! Aliquid doloremque exercitationem fuga illum laboriosam, quos repellat temporibus veniam vero voluptatum. Eligendi?
-    Alias aliquam aliquid amet blanditiis cum debitis delectus doloribus eligendi, eum exercitationem facilis harum inventore itaque laborum maxime necessitatibus nihil non numquam odit omnis provident quos sed, tempora ullam voluptatibus
-
-
-  </div>
-
-  <div class="blog-tags">
-    <div>Angular2</div>
-    <div>Angular-cli</div>
-    <div>Firebase</div>
-    <div>Chartsjs</div>
-  </div>
-
-
+ <div>
+   <button type="button"> <span >{{i.title}}</span></button>
+   <button type="button" (click)="action('delete',i.$key)"><span class="material-icons">delete</span></button>
+   <button type="button" (click)="action('edit',i.$key)"><span class="material-icons">mode_edit</span></button>
+   <button type="button" (click)="action('read',i.$key)"><span class="material-icons">text_fields</span></button>
+ </div>
 </div>

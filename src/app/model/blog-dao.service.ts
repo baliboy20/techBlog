@@ -20,6 +20,8 @@ const storePostPath = blogPostPath;
 @Injectable()
 export class BlogDaoService {
 
+  cachedResult$: Subject<any>= new Subject();
+
   constructor(private af: AngularFire,
               private http: Http,
               @Inject(FirebaseApp) private fba: any) {
@@ -59,16 +61,32 @@ export class BlogDaoService {
   }
 
 
-  retrieveFromStorage(filename?: string) {
+  // retrieveFromStorage(filename?: string) {
+  //
+  //   return this.fba.storage().ref().child(storePostPath + "my_title").getDownloadURL()
+  //     .then(a => this._fromStore(a))
+  //     .catch(err => console.log('FIREBASE ERROR', err));
+  // }
 
-    return this.fba.storage().ref().child(storePostPath + "my_title").getDownloadURL()
-      .then(a => this._fromStore(a))
-      .catch(err => console.log('FIREBASE ERROR', err));
+  /**
+   * Retrieves an item storage either to read or for editing
+   * @param key
+   * @returns {Observable<R>}
+   */
+  findItem(key) {
+    return this.af.database.object(storePostPath + key).map(a => a[key]);
   }
 
 
-  findItem(key) {
-    return this.af.database.object(storePostPath + key).map(a => a[key]);
+
+  getResultCached(): Subject<any> {
+    return this.cachedResult$;
+  }
+
+  findItemCached(key) {
+    this.cachedResult$ = new Subject();
+    this.af.database.object(storePostPath + key).map(a => a[key])
+      .subscribe(a => this.cachedResult$.next(a));
   }
 
 

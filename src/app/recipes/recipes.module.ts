@@ -4,7 +4,8 @@ import {RecipesComponent} from "./recipes.component";
 import {RouterModule} from "@angular/router";
 import {SearchComponent} from "../shared/search/search.component";
 import { TxComponent } from './tx/tx.component';
-import { EntryComponent } from './entry/entry.component';
+
+import { RecipeEntryComponent } from './recipe-entry/recipe-entry.component';
 
 // export const recipeRoutes = RouterModule.forChild([
 export const recipeRoutes =  ([
@@ -12,6 +13,8 @@ export const recipeRoutes =  ([
    children: [
      {path: '', redirectTo: 'search', pathMatch: 'full'},
      {path: 'search', component: SearchComponent},
+     {path: 'recipe-entry/:id', component: RecipeEntryComponent},
+     {path: 'recipe-entry', component: RecipeEntryComponent},
    ]},
 
     // {path: 'test1', component: RecipesComponent},
@@ -25,7 +28,7 @@ export const recipeRoutes =  ([
     CommonModule,
     RouterModule
     ],
-    declarations: [RecipesComponent, TxComponent, EntryComponent],
+    declarations: [RecipesComponent, TxComponent, RecipeEntryComponent],
  exports: []
 })
 export class RecipesModule {
