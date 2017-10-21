@@ -6,6 +6,8 @@ import {SearchComponent} from "../shared/search/search.component";
 import { TxComponent } from './tx/tx.component';
 
 import { RecipeEntryComponent } from './recipe-entry/recipe-entry.component';
+import {FormsModule} from "@angular/forms";
+import {EditBoxModule} from "./recipe-entry/edit-box/edit-box.module";
 
 // export const recipeRoutes = RouterModule.forChild([
 export const recipeRoutes =  ([
@@ -26,7 +28,9 @@ export const recipeRoutes =  ([
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    EditBoxModule
     ],
     declarations: [RecipesComponent, TxComponent, RecipeEntryComponent],
  exports: []

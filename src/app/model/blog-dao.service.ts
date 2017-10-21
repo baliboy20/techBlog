@@ -6,13 +6,29 @@ import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/observable/of';
 
+
+
+export interface Catlog {
+  title: string;
+  exerpt: string;
+  url: string;
+}
+
+
+
 export interface BlogItem {
   title: string;
   content: string;
   postedOn?: Date;
   tags?: string[ ];
   categories?: string[ ];
+  id?: string;
 }
+
+
+export interface TagChanges { postId: string; tagsAdded?: string[]; tagsDeleted?: string[]; };
+export interface BlogChanges { blogItem: BlogItem; tagChanges: TagChanges; categoryChanges: TagChanges; };
+
 
 const blogPostPath = "tech-blog/posts/";
 const storePostPath = blogPostPath;

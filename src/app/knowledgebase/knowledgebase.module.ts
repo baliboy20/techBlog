@@ -6,7 +6,7 @@ import {recipeRoutes, RecipesModule} from "../recipes/recipes.module";
 import {RecipesComponent} from "../recipes/recipes.component";
 
 const routes: Routes = [
-  { path: 'knowledgebase', component: KnowledgebaseComponent,
+  { path: 'knowledgebase', component: KnowledgebaseComponent, data: {showstate: true},
   children: [ ... recipeRoutes] }
   ]
 

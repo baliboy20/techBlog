@@ -1,0 +1,17 @@
+.edit-box {
+  background-color: aliceblue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding:3px;
+ &  > * { margin:3px;}
+  & > input{
+    flex: 1 1 25%;
+    font-size: .8rem;
+    padding: 5px;
+    outline:none;
+    border: silver solid 2px;
+    //background-color: aquamarine;
+
+  }
+}

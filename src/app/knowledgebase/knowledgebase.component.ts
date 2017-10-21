@@ -17,11 +17,11 @@ export class KnowledgebaseComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-   console.log('XXXX', this.router.routerState);
+   this.route.data.subscribe(a => console.log('showstate', a['showstate']));
   }
 
   ngOnDestroy() {
-    console.log('ONdestroy knowlllybaes');
+
   }
 
 }

@@ -1,0 +1,36 @@
+//@import "../../../../assets/styles/partials/fonts";
+
+.edit-box-item {
+  box-sizing: content-box;
+  border: dashed 1px silver;
+  border-radius: 5px;
+
+  overflow: scroll;
+  //padding: 15px;
+  display: inline-block;
+
+  & > div {
+    //border: 1px solid blue;
+    display: inline-block;
+    padding:3px 5px;
+    //@include fontStyle;
+  }
+  & > button {
+    opacity: .1;
+    background: none;
+    outline: none;
+    border: none;
+    transform: scale(.6);
+    transition: all 250ms ease;
+  }
+
+  &:hover > button {
+    opacity: .4;
+    transition: all 250ms ease;
+    &:hover {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
