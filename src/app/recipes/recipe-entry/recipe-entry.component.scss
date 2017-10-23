@@ -1,0 +1,71 @@
+@import "../../../assets/styles/partials/fonts";
+
+button {
+  background-color: lighten(gainsboro, 5%);
+  padding: 8px;
+  //@include fontStyle; TODO REPAIR
+  & > span:first-child {
+    font: "Andale Mono";
+    display: table;
+    width: 100%;
+    marging: 0 auto;
+    color: darken(silver, 15%);
+    margin-bottom: 5px;
+
+  }
+}
+
+.preview-containter {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border: dotted silver 1px;
+}
+
+.form-edit-container {
+  margin-top: 7px;
+  display: flex;
+  flex: 1 1 100%;
+  //border: dotted 1px silver;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+
+  & > form {
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: lighten(#e5e5e5, 5%);
+    box-shadow: 2px 7px 9px -1px darken(#e5e5e5, 8%);
+    border: 1px solid #e5e5e5;
+
+    flex: 1 1 auto;
+    width: 90%;
+    & > .form-group {
+      display: flex;
+      justify-content: center;
+      flex: 1 1 100%;
+
+      & > * {
+        margin-top: 15px;
+        width: 70%;
+        padding: 15px;
+        font-size: .8rem;
+      }
+
+      & > input {
+        font-size: 1.0rem;
+      }
+
+      & > textarea {
+        padding: 15px;
+        min-height: 40vh;
+      }
+      &:last-child {
+        margin-bottom: 15px;
+      }
+    }
+
+  }
+}

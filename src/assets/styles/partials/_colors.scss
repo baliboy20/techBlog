@@ -1,0 +1,41 @@
+
+
+//==============================================================================>   Content
+
+//-- Content sub-menu
+$content-nav-subheader-color: #fff;
+$content-nav-overFontListColor: lighten(dodgerblue, 35%);
+$content-nav-listColor: lighten(dodgerblue, 30%);
+
+$content-nav-background: lighten(dodgerblue, 10%);
+
+//-- Content area
+$content-header-color: dimgray;
+$content-color: dimgray;
+$borderColor: lightgray;
+
+
+//==============================================================================>   Top Menu
+
+//-- backgrounds
+$topMenu-backcolor: darken(dodgerblue, 3%);
+$topMenu-bordercolor: dimgray;
+$topMenu-boxShadow-color: dimgray;
+
+//-- fonts
+$topMenu-listColor: snow;
+
+
+
+
+//==============================================================================>   Side Menu
+
+//-- backgrounds
+$sideMenu-backcolor:lighten(gainsboro, 10%);
+$sideMenu-listHover-bgColor:lighten(gainsboro, 5%);
+$sideMenu-bordercolor: lighten( silver, 5%);
+$sideMenu-boxShadow-color: silver;
+
+//-- fonts
+$sideMenu-listColor:dimgray;    /// list items
+$sideMenu-header-subdued: lightgray;  //for sub headers

@@ -1,0 +1,65 @@
+
+
+
+<div class="main-container">
+
+  <div class="left-side">
+    <div class="vertical-spacer" style="height: 1.001vh"></div>mod
+
+    <div class="left-side-header">
+      <div>
+        <span class="material-icons">business_center</span>
+        <span>Overview</span>
+      </div>
+      <div>
+        <span class="material-icons">settings</span>
+      </div>
+
+    </div>
+
+    <div class="vertical-spacer" style="height: 6.1vh"></div>
+    <nav class="left-side-nav">
+
+      <div class="separator">
+        <span>Blog</span>
+      </div>
+
+      <ul class="sidebarMenu">
+        <li><a [routerLink]="['recipes']" (click)="showLeftSide=false"><span class="material-icons">business_center</span> <span> Recipes</span></a></li>
+        <li><a href=""><span class="material-icons">airport_shuttle</span></a> <span> Drils</span></li>
+        <li><a href=""><span class="material-icons">all_inclusive</span></a> <span> Snippets</span></li>
+        <li><a href=""><span class="material-icons">free_breakfast</span></a> <span> Links</span></li>
+
+      </ul>
+    </nav>
+
+    <div class="vertical-spacer" style="height: 2.1vh"></div>
+    <nav class="left-side-nav">
+
+      <div class="separator">
+        <span>organisation</span>
+      </div>
+
+
+      <ul class="sidebarMenu">
+        <li><a href=""><span class="material-icons">event_note</span></a> <span> Recipes</span></li>
+        <li><a href=""><span class="material-icons">personal_video</span></a> <span> Drils</span></li>
+        <li><a href=""><span class="material-icons">business_center</span></a> <span> Snippets</span></li>
+        <li><a href=""><span class="material-icons">sd_card</span></a> <span> Links</span></li>
+
+      </ul>
+    </nav>
+
+    <div class="left-side-footer">
+      <div class="collapse-sidebar">
+        <span class="material-icons">chevron_left</span></div>
+    </div>
+  </div>
+
+  <div class="content-container">
+
+    <router-outlet ></router-outlet>
+  </div>
+
+
+</div>

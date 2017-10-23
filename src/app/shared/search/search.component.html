@@ -1,0 +1,32 @@
+
+
+<div class="edit-form-container">
+
+
+
+  <div>Search Component</div>
+
+
+  <div style="display: inline-flex; justify-content: center; margin: 0; left: 0; right:0">
+    <span class="material-icons">search</span>
+    <span contentEditable="true" > some text</span>
+  </div>
+
+  <div style="height: 1.5rem"></div>
+
+  <div *ngFor="let i of list">
+
+    <div>
+      <button type="button"> <span >{{i.title}}</span></button>
+      <button type="button" (click)="action('delete',i.$key)"><span class="material-icons">delete</span></button>
+      <button type="button" (click)="action('edit',i.$key)"><span class="material-icons">mode_edit</span></button>
+      <button type="button" (click)="action('read',i.$key)"><span class="material-icons">text_fields</span></button>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>

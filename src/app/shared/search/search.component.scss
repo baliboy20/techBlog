@@ -1,0 +1,37 @@
+.edit-form-container {
+  display:flex;
+  width: 100%;
+  background-color: greenyellow;
+  justify-content: center;
+  border: 1px solid crimson;
+}
+
+button {
+  display: inline;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+
+  .material-icons {
+
+    //background-color:red;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    transform: scale(.7);
+    color: dimgray;
+
+    &:hover {
+      color: lighten(dimgray, 7%);
+      transform: scale(.75);
+    }
+
+    &:active {
+      color: lighten(dimgray, 17%);
+    }
+
+  }
+}

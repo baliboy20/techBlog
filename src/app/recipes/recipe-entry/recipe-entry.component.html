@@ -1,0 +1,42 @@
+<form #fmBlog="ngForm" novalidate>
+  <div class="form-group">
+    <button type="button" (click)="submit($event);false">
+      <span>{{edit_state === 'edit' ? 'Update' : 'Insert new'}}</span>
+    </button>
+  </div>
+
+  <div class="form-group">
+
+    <input type="text" [(ngModel)]="mdl.blogItem.title" name="title">
+  </div>
+
+  <div class="form-group">
+
+    <textarea name="content" #ta1 cols="30" rows="10" [(ngModel)]="mdl.blogItem.content" name="content"></textarea>
+  </div>
+
+  <div class="form-group">
+    <edit-box
+      [placeholder]="'Add Tags and press Enter ..'"
+      name="tags" #tags
+      [(ngModel)]="mdl.blogItem.tags" >
+    </edit-box>
+  </div>
+
+  <div class="form-group">
+    <edit-box
+      name="categories" #categories
+      [(ngModel)]="mdl.blogItem.categories"
+      [placeholder]="'Add Categories and press Enter ..'">
+    </edit-box>
+  </div>
+
+
+
+</form>
+
+
+
+
+
+

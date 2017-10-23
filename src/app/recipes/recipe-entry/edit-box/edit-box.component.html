@@ -1,0 +1,10 @@
+<div class="edit-box">
+  <input type="text" #inputbox autofocus [placeholder] = "placeholder"
+         (keyup)="on_keyup($event)" >
+  <ng-container *ngFor="let itm of items; let idx = index">
+    <edit-box-item [item]="itm"  (doDelete)= "onDelete($event,idx);false"></edit-box-item>
+
+  </ng-container>
+</div>
+
+
